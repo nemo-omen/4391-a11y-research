@@ -1,0 +1,10 @@
+---
+import { getEntry } from 'astro:content';
+const { id, slug } = Astro.props;
+const entry = await getEntry('sections', slug);
+
+// console.log(entry);
+const { Content } = await entry!.render();
+---
+
+<Content />

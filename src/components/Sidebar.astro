@@ -1,0 +1,62 @@
+---
+const { title, sections } = Astro.props;
+const sectionData = sections.map((section) => ({
+  title: section.data.title,
+  slug: section.slug,
+  subsections: section.data.subsections || [],
+}));
+
+console.log(sections);
+---
+
+<aside class="sidebar">
+  <label class="masthead" id="nav-label">Table of Contents</label>
+  <nav aria-labelledby="nav-label">
+    <ol>
+      {
+        sectionData.map((section) => (
+          <Fragment>
+            <li>
+              <a href={'#' + section.slug}>{section.title}</a>
+              {section.subsections.length > 0 && (
+                <ol>
+                  {section.subsections.map((subsection) => (
+                    <li>
+                      <a href={'#' + subsection.slug}>{subsection.title}</a>
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </li>
+          </Fragment>
+        ))
+      }
+    </ol>
+  </nav>
+</aside>
+
+<style>
+  aside {
+    font-family: var(--font-sans);
+    margin: 2rem;
+    padding: 2rem;
+    /* border: 1px solid rgba(var(--color-black), 0.2); */
+    background-color: var(--color-subdued-surface);
+    /* border-radius: 0.5rem; */
+  }
+  label {
+    line-height: 1;
+    margin-block-end: 0;
+    font-weight: 700;
+  }
+  ol {
+    list-style-type: none;
+    /* margin-inline-start: 0; */
+    /* padding-inline-start: 0; */
+    margin-block-start: 0;
+  }
+
+  ol li ol {
+    /* margin-inline-start: 1em; */
+  }
+</style>
