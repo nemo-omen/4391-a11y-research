@@ -3,7 +3,7 @@ title: Accessibility at Angelo.edu
 slug: accessibility-at-angeloedu
 ---
 
-import CardLink from '../../components/CardLink.astro';
+import CardLink from '../../components/CardLink.svelte';
 
 # {frontmatter.title}
 
@@ -20,4 +20,4 @@ __TODO__:
 - This minimal style is nice and all, but you might want something just a bit more engaging. Or not, but you really should probably figure out a header and footer (at least).
 
 This will be a test of the 
-<CardLink href="#automated-results" title="Card Title">hover card <span class="hover-card" slot="card-content">This is some card content.</span></CardLink>. I'm hoping I can make this a nice little feature for in-text citations.
+<CardLink href="#example-citation" title="Card Title" client:visible>hover card</CardLink>. I'm hoping I can make this a nice little feature for in-text citations.
