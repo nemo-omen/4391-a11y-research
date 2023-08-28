@@ -16,7 +16,7 @@
     const mainWidth = mainSelection.clientWidth;
     const available = mainWidth - articleHorizontal;
     const doubleOffset = available - card.clientWidth;
-    offset = doubleOffset / 2;
+    offset = doubleOffset / 2 - 16;
     console.log(offset);
   });
 </script>

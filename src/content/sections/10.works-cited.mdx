@@ -2,7 +2,8 @@
 title: Works Cited
 slug: works-cited
 subsections: [
-  {title: 'Example Citation', slug: 'example-citation'}
+  {title: 'Example Citation', slug: 'example-citation'},
+  {title: 'Second Citation', slug: 'second-citation'}
 ]
 ---
 
@@ -14,4 +15,9 @@ import CitationSection from '../../components/CitationSection.astro';
 <span slot="title">Example Citation</span>
 
 <span slot="content">This is an example citation. It isn't even formatted in the same way one would expect a citation to be formatted.</span>
+</CitationSection>
+
+<CitationSection id="second-citation">
+<span slot="title">Second Citation</span>
+<span slot="content">This is a second example citation, just so I can test that multiple citations work as expected.</span>
 </CitationSection>

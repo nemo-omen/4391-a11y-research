@@ -24,6 +24,7 @@
       console.log('CardLink requires a reference to an id ex: `#my-citation-reference`.');
       return;
     }
+
     if (window) {
       const selection = document.querySelector(href);
       const selectionParent = selection.parentElement;
