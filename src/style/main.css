@@ -165,9 +165,9 @@ h5 {
   text-wrap: balance;
 }
 
-ul,
-ol {
-  margin-inline-start: 0.5em;
+ul:not([class]),
+ol:not([class]) {
+  margin-inline-start: 1em;
   padding-inline-start: 0;
 }
 

@@ -10,7 +10,7 @@ const allSections = await getCollection('sections');
 
 <Layout {title}>
   <Sidebar {title} sections={allSections} />
-  <main>
+  <main tabindex="0">
     <article class="flow">
       {allSections.map((section) => <Section id={section.id} slug={section.slug} />)}
       <!-- <h1>Nulla vitae elit libero, a pharetra augue</h1>

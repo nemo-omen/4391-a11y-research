@@ -5,21 +5,19 @@ const sectionData = sections.map((section) => ({
   slug: section.slug,
   subsections: section.data.subsections || [],
 }));
-
-console.log(sections);
 ---
 
 <aside class="sidebar">
-  <label class="masthead" id="nav-label">Table of Contents</label>
+  <label class="masthead" id="nav-label">Contents</label>
   <nav aria-labelledby="nav-label">
-    <ol>
+    <ol class="menu">
       {
         sectionData.map((section) => (
           <Fragment>
             <li>
               <a href={'#' + section.slug}>{section.title}</a>
               {section.subsections.length > 0 && (
-                <ol>
+                <ol class="submenu">
                   {section.subsections.map((subsection) => (
                     <li>
                       <a href={'#' + subsection.slug}>{subsection.title}</a>
@@ -39,24 +37,37 @@ console.log(sections);
   aside {
     font-family: var(--font-sans);
     margin: 2rem;
-    padding: 2rem;
-    /* border: 1px solid rgba(var(--color-black), 0.2); */
-    background-color: var(--color-subdued-surface);
-    /* border-radius: 0.5rem; */
   }
   label {
     line-height: 1;
     margin-block-end: 0;
     font-weight: 700;
   }
-  ol {
+  .menu,
+  .submenu {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
-    /* margin-inline-start: 0; */
-    /* padding-inline-start: 0; */
-    margin-block-start: 0;
   }
 
-  ol li ol {
-    /* margin-inline-start: 1em; */
+  li {
+    display: block;
+    /* position: relative; */
+  }
+
+  li a {
+    display: block;
+  }
+
+  li a:hover,
+  li a:focus {
+    background: var(--color-primary);
+    /* background: rgb(var(--color-black), 0.01); */
+    color: var(--color-background);
+  }
+
+  .submenu li a {
+    padding-inline-start: 0.5em;
+    margin-inline: 0;
   }
 </style>
