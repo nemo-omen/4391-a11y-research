@@ -26,7 +26,8 @@
   bind:this={card}
   role="tooltip"
   style:--offset="{offset}px"
-  transition:fly={{ duration: 700, x: 500 }}
+  in:fly={{ duration: 700, x: 500, delay: 300 }}
+  out:fly={{ duration: 700, x: 500 }}
 >
   <h3 class="card-title">{title}</h3>
   {@html content}
@@ -42,7 +43,7 @@
     position: absolute;
     background-color: var(--color-background);
     box-shadow: 0px 0px 30px 5px rgb(0, 0, 0, 0.025);
-    border-radius: 0.5em;
+    /* border-radius: 0.5em; */
     padding: 1em;
     width: 20em;
     height: auto;
