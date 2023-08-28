@@ -4,7 +4,6 @@
 
   export let title = '';
   export let href;
-  let card;
 
   $: cardContent = '';
   $: cardTitle = title;
@@ -36,9 +35,9 @@
 </script>
 
 <span class="hoverer">
-  <a {href} on:mouseenter={showCard} on:mouseleave={hideCard}><slot /></a>
+  (<a {href} on:mouseenter={showCard} on:mouseleave={hideCard}><slot /></a>)
   {#if cardVisible}
-    <CitationCard on:showCard={showCard} on:hideCard={hideCard} title={cardTitle} content={cardContent} />
+    <CitationCard title={cardTitle} content={cardContent} />
   {/if}
 </span>
 
@@ -46,17 +45,4 @@
   a {
     display: inline;
   }
-
-  .hoverer {
-    /* position: relative; */
-  }
-
-  /* :global(.hoverer > a:hover + .hover-card) {
-    padding: 1em;
-    width: 20em;
-    height: auto;
-    top: -100%;
-    opacity: 1;
-    visibility: visible;
-  } */
 </style>
