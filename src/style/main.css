@@ -233,3 +233,13 @@ blockquote {
 article {
   max-width: 70ch;
 }
+
+.contains-task-list {
+  margin-inline: 0;
+  padding-inline: 0;
+  list-style-type: none;
+}
+
+.task-list-item:has(input:checked) {
+  text-decoration: line-through;
+}
