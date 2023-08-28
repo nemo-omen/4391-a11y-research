@@ -1,0 +1,15 @@
+---
+const { href, title } = Astro.props;
+---
+
+<span class="hoverer">
+  <a {href} class="hover-card-link">
+    <slot />
+  </a>
+  <slot name="card-content" />
+</span>
+<style>
+  .hover-card-link {
+    display: inline;
+  }
+</style>
