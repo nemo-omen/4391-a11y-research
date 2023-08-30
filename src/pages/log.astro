@@ -3,7 +3,12 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 const title = 'A11yCrwlr | Project Log';
 const allLogs = await getCollection('log');
-console.log(allLogs);
+const sortedLogs = allLogs.sort((a, b) => {
+  const aDate = new Date(a.data.title).valueOf();
+  const bDate = new Date(b.data.title).valueOf();
+  console.log(bDate - aDate);
+  return bDate - aDate;
+});
 ---
 
 <Layout {title}>
@@ -11,7 +16,7 @@ console.log(allLogs);
     <h1>Project Log</h1>
 
     {
-      allLogs.map(async (log) => {
+      sortedLogs.map(async (log) => {
         const { Content } = await log.render();
         return (
           <article class="flow">
