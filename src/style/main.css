@@ -163,8 +163,8 @@ code {
 
 a {
   color: var(--color-body);
-  text-decoration-color: var(--color-primary);
-  text-decoration-thickness: 0.125em;
+  /* text-decoration-color: var(--color-primary); */
+  text-decoration-thickness: 0.025em;
   text-underline-offset: 0.125em;
 }
 
