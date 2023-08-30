@@ -37,7 +37,6 @@ const sectionData = sections.map((section) => ({
   aside {
     position: relative;
     font-family: var(--font-sans);
-    /* overflow-y: auto; */
     transform: translateZ(0);
   }
 
@@ -45,7 +44,7 @@ const sectionData = sections.map((section) => ({
     padding: 1rem;
     position: sticky;
     background-color: var(--color-subdued-surface);
-    top: 0;
+    top: 3rem;
     left: 0;
     right: 0;
   }
@@ -69,14 +68,6 @@ const sectionData = sections.map((section) => ({
     display: block;
     margin: 0.25em;
     text-decoration-color: var(--body);
-    /* padding: 0.25em; */
-  }
-
-  li a:hover,
-  li a:focus {
-    /* background: var(--color-primary); */
-    /* background: var(--color-surface); */
-    /* color: var(--color-background); */
   }
 
   .submenu li a {
