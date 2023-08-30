@@ -26,8 +26,8 @@
   bind:this={card}
   role="tooltip"
   style:--offset="{offset}px"
-  in:fly={{ duration: 700, x: 500, delay: 300 }}
-  out:fly={{ duration: 700, x: 500 }}
+  in:fly={{ duration: 500, y: 400, delay: 300 }}
+  out:fly={{ duration: 500, y: 400 }}
 >
   <h3 class="card-title">{title}</h3>
   {@html content}
@@ -43,16 +43,12 @@
     position: absolute;
     background-color: var(--color-background);
     box-shadow: 0px 0px 30px 5px rgb(0, 0, 0, 0.025);
-    /* border-radius: 0.5em; */
     padding: 1em;
     width: 20em;
     height: auto;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    /* top: 50%; */
-    /* right: var(--offset); */
-    /* transform: translateY(-50%); */
     border: 1px solid var(--color-primary);
     font-family: var(--font-mono);
     z-index: 100;

@@ -10,11 +10,9 @@ const allSections = await getCollection('sections');
 
 <Layout {title}>
   <Sidebar {title} sections={allSections} />
-  <main tabindex="0">
-    <article class="flow" id="main-content">
-      {allSections.map((section) => <Section id={section.id} slug={section.slug} />)}
-    </article>
-  </main>
+  <article class="flow" id="main-content">
+    {allSections.map((section) => <Section id={section.id} slug={section.slug} />)}
+  </article>
 </Layout>
 
 <style></style>

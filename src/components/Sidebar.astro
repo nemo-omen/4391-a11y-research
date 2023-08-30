@@ -8,8 +8,8 @@ const sectionData = sections.map((section) => ({
 ---
 
 <aside class="sidebar">
-  <label class="masthead" id="nav-label">Contents</label>
   <nav aria-labelledby="nav-label">
+    <label class="masthead" id="nav-label">Contents</label>
     <ol class="menu">
       {
         sectionData.map((section) => (
@@ -35,10 +35,19 @@ const sectionData = sections.map((section) => ({
 
 <style>
   aside {
+    position: relative;
     font-family: var(--font-sans);
-    margin: 0 3rem;
+    /* overflow-y: auto; */
+    transform: translateZ(0);
+  }
+
+  nav {
     padding: 1rem;
+    position: sticky;
     background-color: var(--color-subdued-surface);
+    top: 0;
+    left: 0;
+    right: 0;
   }
   label {
     line-height: 1;

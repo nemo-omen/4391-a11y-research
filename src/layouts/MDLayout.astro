@@ -5,10 +5,8 @@ const { title } = frontmatter;
 ---
 
 <Layout {title}>
-  <main class="no-sidebar">
-    <article class="flow">
-      <h1>{title}</h1>
-      <slot />
-    </article>
-  </main>
+  <article class="flow">
+    <h1>{title}</h1>
+    <slot />
+  </article>
 </Layout>
