@@ -4,15 +4,16 @@
   --color-red: 255, 99, 71;
   --color-blue: 32, 159, 179;
   --color-light-blue: 59, 229, 255;
-  --color-black: 19, 17, 27;
+  --color-black: 14, 12, 20;
   --color-white: 250, 248, 254;
   --color-body: rgb(var(--color-black));
   --color-background: rgb(var(--color-white));
-  --color-primary: rgb(var(--color-red));
+  --color-primary: rgb(var(--color-blue));
   --color-secondary: rgb(var(--color-blue));
-  --color-hover: var(--color-primary);
+  --color-hover: rgb(var(--color-blue));
   --color-accent: var(--color-secondary);
   --color-subdued-surface: rgb(var(--color-black), 0.01);
+  --color-surface: rgb(var(--color-black), 0.06);
 
   --size-9: 3.052rem;
   --size-8: 2.441rem;
@@ -39,8 +40,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-primary: rgb(var(--color-light-blue), 0.9);
     --color-background: rgb(var(--color-black));
     --color-body: rgb(var(--color-white));
+    --color-hover: rgb(var(--color-light-blue));
+    --color-subdued-surface: rgb(var(--color-white), 0.05);
+    --color-surface: rgb(var(--color-white), 0.07);
   }
 }
 

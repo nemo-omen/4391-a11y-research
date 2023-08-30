@@ -36,7 +36,9 @@ const sectionData = sections.map((section) => ({
 <style>
   aside {
     font-family: var(--font-sans);
-    margin: 2rem;
+    margin: 0 2rem;
+    padding: 1rem;
+    background-color: var(--color-subdued-surface);
   }
   label {
     line-height: 1;
@@ -52,21 +54,23 @@ const sectionData = sections.map((section) => ({
 
   li {
     display: block;
-    /* position: relative; */
   }
 
   li a {
     display: block;
+    margin: 0.25em;
+    /* padding: 0.25em; */
   }
 
   li a:hover,
   li a:focus {
-    background: var(--color-primary);
-    color: var(--color-background);
+    /* background: var(--color-primary); */
+    /* background: var(--color-surface); */
+    /* color: var(--color-background); */
   }
 
   .submenu li a {
-    padding-inline-start: 0.5em;
+    padding-inline-start: 1em;
     margin-inline: 0;
   }
 </style>
