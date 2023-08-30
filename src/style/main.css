@@ -131,6 +131,7 @@ body {
   line-height: 1.7;
   display: grid;
   grid-template-columns: 25rem 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 
 main {
@@ -139,6 +140,11 @@ main {
   overflow-y: auto;
   padding: 2rem;
   scroll-behavior: smooth;
+}
+
+.no-sidebar {
+  width: min(70rem, 100%);
+  grid-column: 2/3;
 }
 
 ::selection {
