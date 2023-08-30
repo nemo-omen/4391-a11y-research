@@ -47,10 +47,14 @@
     padding: 1em;
     width: 20em;
     height: auto;
-    top: 50%;
-    right: var(--offset);
-    transform: translateY(-50%);
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    /* top: 50%; */
+    /* right: var(--offset); */
+    /* transform: translateY(-50%); */
     border: 1px solid var(--color-primary);
     font-family: var(--font-mono);
+    z-index: 100;
   }
 </style>

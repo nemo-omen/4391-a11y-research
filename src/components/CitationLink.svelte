@@ -43,6 +43,9 @@
 </span>
 
 <style>
+  .hoverer {
+    position: relative;
+  }
   a {
     display: inline;
   }

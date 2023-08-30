@@ -13,18 +13,20 @@ const sortedLogs = allLogs.sort((a, b) => {
 
 <Layout {title}>
   <main id="main" class="no-sidebar flow">
-    <h1>Project Log</h1>
+    <article class="flow">
+      <h1>Project Log</h1>
 
-    {
-      sortedLogs.map(async (log) => {
-        const { Content } = await log.render();
-        return (
-          <article class="flow">
-            <h2>{log.data.title}</h2>
-            <Content />
-          </article>
-        );
-      })
-    }
+      {
+        sortedLogs.map(async (log) => {
+          const { Content } = await log.render();
+          return (
+            <section class="flow">
+              <h2>{log.data.title}</h2>
+              <Content />
+            </section>
+          );
+        })
+      }
+    </article>
   </main>
 </Layout>
