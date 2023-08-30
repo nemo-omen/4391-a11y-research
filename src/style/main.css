@@ -37,6 +37,13 @@
   --font-serif: 'Merriweather', serif;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: rgb(var(--color-black));
+    --color-body: rgb(var(--color-white));
+  }
+}
+
 *,
 *::before,
 *::after {
