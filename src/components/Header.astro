@@ -18,7 +18,7 @@ const pathname = currentUrl.pathname;
 
 <style>
   header {
-    padding-inline: 2rem;
+    padding-inline: 3rem;
     padding-block: 1rem;
     border-bottom: 1px solid var(--color-body);
     display: flex;
@@ -26,6 +26,10 @@ const pathname = currentUrl.pathname;
     justify-content: space-between;
     background-color: var(--color-background);
     z-index: 200;
+  }
+
+  header * {
+    line-height: 1;
   }
 
   .masthead {
