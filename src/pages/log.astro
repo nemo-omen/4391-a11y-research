@@ -1,10 +1,25 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 const title = 'A11yCrwlr | Project Log';
+const allLogs = await getCollection('log');
+console.log(allLogs);
 ---
 
 <Layout {title}>
-  <main id="main" class="no-sidebar">
+  <main id="main" class="no-sidebar flow">
     <h1>Project Log</h1>
+
+    {
+      allLogs.map(async (log) => {
+        const { Content } = await log.render();
+        return (
+          <article class="flow">
+            <h2>{log.data.title}</h2>
+            <Content />
+          </article>
+        );
+      })
+    }
   </main>
 </Layout>
