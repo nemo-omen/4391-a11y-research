@@ -3,7 +3,6 @@
   import { fly, scale } from 'svelte/transition';
   import { offset, flip, shift } from 'svelte-floating-ui/dom';
   import { createFloatingActions } from 'svelte-floating-ui';
-  import CitationCard from './CitationCard.svelte';
 
   export let title = '';
   export let href;
