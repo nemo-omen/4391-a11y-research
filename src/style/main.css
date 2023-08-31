@@ -263,3 +263,12 @@ article {
 .task-list-item:has(input:checked) {
   text-decoration: line-through;
 }
+
+*~input[type="checkbox"]:checked {
+  text-decoration: line-through;
+}
+
+section:has(>:target) {
+  /* outline: 1px dashed var(--color-primary); */
+  background-color: var(--color-subdued-surface);
+}

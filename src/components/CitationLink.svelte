@@ -54,8 +54,8 @@
     <div
       class="hover-card"
       role="tooltip"
-      in:scale={{ duration: 400, delay: 300 }}
-      out:scale={{ duration: 400 }}
+      in:scale={{ duration: 300, delay: 200 }}
+      out:scale={{ duration: 300 }}
       use:floatingContent
     >
       <h2 class="card-title">{cardTitle}</h2>
