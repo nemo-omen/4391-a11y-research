@@ -87,6 +87,5 @@
     height: auto;
     background-color: var(--color-background);
     box-shadow: 0px 0px 30px 5px rgb(0, 0, 0, 0.025);
-    overflow-y: auto;
   }
 </style>
