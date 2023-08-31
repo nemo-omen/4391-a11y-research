@@ -22,13 +22,11 @@
   onMount(() => {
     const mainSelection = document.querySelector('main');
     const articleSelection = document.querySelector('#main-content');
-    const articleWidth = articleSelection.scrollWidth;
-    const articleHorizontal = articleSelection.scrollLeft + articleWidth;
-    const mainWidth = mainSelection.clientWidth;
-    const available = mainWidth - articleHorizontal;
-    const doubleOffset = available - card.clientWidth;
-    offset = doubleOffset / 2 - 16;
-    console.log(offset);
+    const cardRect = card.getBoundingClientRect();
+    const { top, bottom } = cardRect;
+    const headerSelection = document.querySelector('header');
+    const headerRect = headerSelection.getBoundingClientRect();
+    console.log(cardRect.top, headerRect.bottom);
   });
 </script>
 
