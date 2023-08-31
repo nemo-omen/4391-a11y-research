@@ -1,5 +1,8 @@
 <script>
   import { onMount } from 'svelte';
+  import { fly, scale } from 'svelte/transition';
+  import { offset, flip, shift } from 'svelte-floating-ui/dom';
+  import { createFloatingActions } from 'svelte-floating-ui';
   import CitationCard from './CitationCard.svelte';
 
   export let title = '';
@@ -8,6 +11,12 @@
   $: cardContent = '';
   $: cardTitle = title;
   $: cardVisible = false;
+
+  const [floatingRef, floatingContent] = createFloatingActions({
+    strategy: 'absolute',
+    placement: 'top',
+    middleware: [offset(8), flip(), shift()],
+  });
 
   function showCard() {
     cardVisible = true;
@@ -34,15 +43,25 @@
 </script>
 
 <span class="hoverer">
-  (<a {href} on:mouseenter={!cardVisible ? showCard() : null}><slot /></a>)
+  (<a
+    {href}
+    on:mouseenter={!cardVisible ? showCard() : null}
+    on:mouseleave={cardVisible ? hideCard() : null}
+    on:focus={!cardVisible ? showCard() : null}
+    on:blur={cardVisible ? hideCard() : null}
+    use:floatingRef><slot /></a
+  >)
   {#if cardVisible}
-    <CitationCard
-      parent={this}
-      title={cardTitle}
-      content={cardContent}
-      on:hover={!cardVisible ? showCard() : null}
-      on:unhover={cardVisible ? hideCard() : null}
-    />
+    <div
+      class="hover-card"
+      role="tooltip"
+      in:scale={{ duration: 400, delay: 300 }}
+      out:scale={{ duration: 400 }}
+      use:floatingContent
+    >
+      <h2 class="card-title">{cardTitle}</h2>
+      {@html cardContent}
+    </div>
   {/if}
 </span>
 
@@ -52,5 +71,23 @@
   }
   a {
     display: inline;
+  }
+
+  .card-title {
+    margin-block-end: 1rem;
+  }
+
+  .hover-card {
+    display: block;
+    position: absolute;
+    padding: 1rem;
+    font-family: var(--font-mono);
+    z-index: 100;
+    border: 1px solid var(--color-primary);
+    width: min(21em, 90vw);
+    height: auto;
+    background-color: var(--color-background);
+    box-shadow: 0px 0px 30px 5px rgb(0, 0, 0, 0.025);
+    overflow-y: auto;
   }
 </style>
