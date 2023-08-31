@@ -10,9 +10,7 @@
   $: cardVisible = false;
 
   function showCard() {
-    if (!cardVisible) {
-      cardVisible = true;
-    }
+    cardVisible = true;
   }
 
   function hideCard() {
@@ -36,9 +34,15 @@
 </script>
 
 <span class="hoverer">
-  (<a {href} on:mouseenter={showCard} on:mouseleave={hideCard}><slot /></a>)
+  (<a {href} on:mouseenter={!cardVisible ? showCard() : null}><slot /></a>)
   {#if cardVisible}
-    <CitationCard title={cardTitle} content={cardContent} />
+    <CitationCard
+      parent={this}
+      title={cardTitle}
+      content={cardContent}
+      on:hover={!cardVisible ? showCard() : null}
+      on:unhover={cardVisible ? hideCard() : null}
+    />
   {/if}
 </span>
 
