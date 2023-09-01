@@ -14,7 +14,7 @@
   const [floatingRef, floatingContent] = createFloatingActions({
     strategy: 'absolute',
     placement: 'top',
-    middleware: [offset(8), flip(), shift()],
+    middleware: [flip(), shift()],
   });
 
   function showCard() {
@@ -41,15 +41,17 @@
   });
 </script>
 
-<span class="hoverer">
-  (<a
-    {href}
-    on:mouseenter={!cardVisible ? showCard() : null}
-    on:mouseleave={cardVisible ? hideCard() : null}
-    on:focus={!cardVisible ? showCard() : null}
-    on:blur={cardVisible ? hideCard() : null}
-    use:floatingRef><slot /></a
-  >)
+<!-- <span class="hoverer"> -->
+[<a
+  class="hoverer"
+  {href}
+  on:mouseenter={!cardVisible ? showCard() : null}
+  on:mouseleave={cardVisible ? hideCard() : null}
+  on:focus={!cardVisible ? showCard() : null}
+  on:blur={cardVisible ? hideCard() : null}
+  use:floatingRef
+>
+  {title}
   {#if cardVisible}
     <div
       class="hover-card"
@@ -58,11 +60,15 @@
       out:scale={{ duration: 300 }}
       use:floatingContent
     >
-      <h2 class="card-title">{cardTitle}</h2>
-      {@html cardContent}
+      <div class="card-wrapper">
+        <h2 class="card-title">{cardTitle}</h2>
+        {@html cardContent}
+      </div>
     </div>
-  {/if}
-</span>
+  {/if}</a
+>]
+
+<!-- </span> -->
 
 <style>
   .hoverer {
@@ -82,10 +88,20 @@
     padding: 1rem;
     font-family: var(--font-mono);
     z-index: 100;
-    border: 1px solid var(--color-primary);
     width: min(21em, 90vw);
     height: auto;
-    background-color: var(--color-background);
     box-shadow: 0px 0px 30px 5px rgb(0, 0, 0, 0.025);
+    background-color: transparent;
+  }
+
+  .card-wrapper {
+    padding: 1rem;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-background);
+    color: var(--color-body);
+  }
+
+  :global(.card-wrapper:hover *) {
+    color: var(--color-body);
   }
 </style>
