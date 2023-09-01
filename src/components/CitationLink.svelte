@@ -13,7 +13,7 @@
 
   const [floatingRef, floatingContent] = createFloatingActions({
     strategy: 'absolute',
-    placement: 'top',
+    placement: 'top-start',
     middleware: [flip(), shift()],
   });
 
@@ -49,24 +49,22 @@
   on:mouseleave={cardVisible ? hideCard() : null}
   on:focus={!cardVisible ? showCard() : null}
   on:blur={cardVisible ? hideCard() : null}
-  use:floatingRef
->
-  {title}
-  {#if cardVisible}
-    <div
-      class="hover-card"
-      role="tooltip"
-      in:scale={{ duration: 300, delay: 200 }}
-      out:scale={{ duration: 300 }}
-      use:floatingContent
-    >
-      <div class="card-wrapper">
-        <h2 class="card-title">{cardTitle}</h2>
-        {@html cardContent}
-      </div>
-    </div>
-  {/if}</a
+  use:floatingRef>{title}</a
 >]
+{#if cardVisible}
+  <div
+    class="hover-card"
+    role="tooltip"
+    in:scale={{ duration: 300, delay: 200 }}
+    out:scale={{ duration: 300 }}
+    use:floatingContent
+  >
+    <div class="card-wrapper">
+      <h2 class="card-title">{cardTitle}</h2>
+      {@html cardContent}
+    </div>
+  </div>
+{/if}
 
 <!-- </span> -->
 
@@ -88,13 +86,15 @@
     padding: 1rem;
     font-family: var(--font-mono);
     z-index: 100;
-    width: min(21em, 90vw);
+    width: min(60ch, 90vw);
+    /* width: 100%; */
     height: auto;
     box-shadow: 0px 0px 30px 5px rgb(0, 0, 0, 0.025);
     background-color: transparent;
   }
 
   .card-wrapper {
+    display: block;
     padding: 1rem;
     border: 1px solid var(--color-primary);
     background-color: var(--color-background);
