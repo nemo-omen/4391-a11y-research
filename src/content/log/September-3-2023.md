@@ -4,7 +4,7 @@ title: Sunday, September 3, 2023
 
 ### Additional Pages to Test
 
-While exploring more of the site, I decided to run [Axe DevTools](https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/) on a few pages that don't fall under the RamPort domain. These included the RamPort login page, the [MyAccount](https://aic.angelo.edu/AIssue/Self/) page, the [MyPassword](https://mypassword.angelo.edu/Login.aspx?ReturnUrl=%2f) page, and the [Publick Knowledge - Using MyPassword Service](https://angelostate.servicenowservices.com/kb?id=kb_article_view&sysparm_article=KB0010286&sys_kb_id=62b1d388dbd08d1047e8818a1396193c&spa=1) page. All of them had multiple accessibility problems.
+While exploring more of the site, I decided to run [Axe DevTools](https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/) on a few pages that don't fall under the RamPort domain. These included the RamPort login page, the [MyAccount](https://aic.angelo.edu/AIssue/Self/) page, the [MyPassword](https://mypassword.angelo.edu/Login.aspx?ReturnUrl=%2f) page, and the [Public Knowledge - Using MyPassword Service](https://angelostate.servicenowservices.com/kb?id=kb_article_view&sysparm_article=KB0010286&sys_kb_id=62b1d388dbd08d1047e8818a1396193c&spa=1) page. All of them had multiple accessibility problems.
 
 These pages are fundamental to a student's ability to establish an account,  recover an account, or access documentation about the technology connected to their account.
 
