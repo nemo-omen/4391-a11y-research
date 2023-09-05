@@ -7,9 +7,10 @@ title: 'Todo'
 - [x] Citation hover cards
 - [x] Works Cited Page
 - [x] Adjust hover card so it appears above or below user's mouse (see Wikipedia internal links)
-- [ ] Complete IRB training
+- [x] Complete IRB training
 - [ ] Draft consent form
 - [ ] Draft IRB application
+- [ ] Responsive sidebar menu
 - [ ] Works Cited citation styles.
 - [ ] Figure/Figcaption styles
 - [ ] Print styles (so this document can be used for final pdf)
