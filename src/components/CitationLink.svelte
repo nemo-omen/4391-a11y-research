@@ -13,7 +13,7 @@
 
   const [floatingRef, floatingContent] = createFloatingActions({
     strategy: 'absolute',
-    placement: 'top-start',
+    placement: 'top',
     middleware: [flip(), shift()],
   });
 
