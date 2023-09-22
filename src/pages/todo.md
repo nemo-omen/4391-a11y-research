@@ -8,8 +8,8 @@ title: 'Todo'
 - [x] Works Cited Page
 - [x] Adjust hover card so it appears above or below user's mouse (see Wikipedia internal links)
 - [x] Complete IRB training
-- [ ] Draft consent form
-- [ ] Draft IRB application
+- [x] Draft consent form
+- [x] Draft IRB application
 - [ ] Responsive sidebar menu
 - [ ] Works Cited citation styles.
 - [ ] Figure/Figcaption styles
