@@ -187,10 +187,6 @@ a:hover {
     white-space: nowrap;
     width: 1px;
   }
-
-  /* &:focus {
-    transform: translateY(-100%);
-  } */
 }
 
 h1,
@@ -243,11 +239,13 @@ h4 {
 }
 
 :is(h1, h2, h3, blockquote) {
-  --flow-space: var(--size-step-1);
+  --flow-space: var(--size-step-3);
+  /* margin-top: var(--flow-space); */
 }
 
 :is(h1, h2, h3)+* {
   --flow-space: var(--size-step-1);
+  /* margin-top: var(--flow-space); */
 }
 
 article>* {
