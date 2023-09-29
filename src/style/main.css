@@ -171,6 +171,28 @@ a:hover {
   color: var(--color-hover);
 }
 
+.visually-hidden {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+
+  &:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  /* &:focus {
+    transform: translateY(-100%);
+  } */
+}
+
 h1,
 h2,
 h3,

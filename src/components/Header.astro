@@ -4,7 +4,8 @@ const pathname = currentUrl.pathname;
 ---
 
 <header>
-  <a class="masthead" aria-label="Ally Crawler" href="/">A11yCrwlr</a>
+  <a href="#main-content" class="skip-link visually-hidden">Skip to Content</a>
+  <a class="masthead" aria-label="Ally Crawler" href="/">A11y Edu</a>
 
   <nav class="site-nav" aria-label="Main Navigation">
     <ul>
@@ -26,6 +27,7 @@ const pathname = currentUrl.pathname;
     justify-content: space-between;
     background-color: var(--color-background);
     z-index: 200;
+    position: relative;
   }
 
   header * {
