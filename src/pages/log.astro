@@ -12,14 +12,14 @@ const sortedLogs = allLogs.sort((a, b) => {
 ---
 
 <Layout {title}>
-  <article class="flow" id="main-content">
+  <article class="flow log" id="main-content">
     <h1>Project Log</h1>
 
     {
       sortedLogs.map(async (log) => {
         const { Content } = await log.render();
         return (
-          <section class="flow">
+          <section class="flow log-entry">
             <h2>{log.data.title}</h2>
             <Content />
           </section>

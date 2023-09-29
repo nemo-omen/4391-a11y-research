@@ -248,6 +248,16 @@ h4 {
   /* margin-top: var(--flow-space); */
 }
 
+:is(h2) {
+  /* text-decoration: underline; */
+  border-bottom: 0.075em solid var(--color-body);
+}
+
+.log-entry {
+  margin-block-end: var(--size-step-4);
+  --flow-space: var(--size-step-1);
+}
+
 article>* {
   max-width: 70ch;
 }
