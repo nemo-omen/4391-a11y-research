@@ -251,6 +251,7 @@ h4 {
 :is(h2) {
   /* text-decoration: underline; */
   border-bottom: 0.075em solid var(--color-body);
+  padding-bottom: 0.25em;
 }
 
 .log-entry {
