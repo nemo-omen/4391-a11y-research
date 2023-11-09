@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import ReportLayout from "../layouts/ReportLayout.astro";
 // import Sidebar from "../components/Sidebar.astro";
 import Section from "../components/Section.astro";
 const title = "A11y Edu";
@@ -8,8 +9,7 @@ const allSections = await getCollection("sections");
 // console.log(allSections);
 ---
 
-<Layout {title}>
-  <!-- <Sidebar {title} sections={allSections} /> -->
+<ReportLayout {title}>
   <article class="flow" id="main-content">
     {
       allSections.map((section) => (
@@ -17,6 +17,6 @@ const allSections = await getCollection("sections");
       ))
     }
   </article>
-</Layout>
+</ReportLayout>
 
 <style></style>

@@ -1,0 +1,18 @@
+---
+import Layout from "./Layout.astro";
+import Sidebar from "../components/Sidebar.astro";
+import { getCollection } from "astro:content";
+const { title } = Astro.props;
+
+const allSections = await getCollection("sections");
+---
+
+<Layout {title}>
+  <Sidebar {title} sections={allSections} slot="sidebar" />
+  <main>
+    <article id="main-content">
+      <h1>{title}</h1>
+      <slot />
+    </article>
+  </main>
+</Layout>

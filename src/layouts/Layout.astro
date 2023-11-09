@@ -1,15 +1,12 @@
 ---
 import "../style/main.css";
 import Header from "../components/Header.astro";
-import Sidebar from "../components/Sidebar.astro";
-import { getCollection } from "astro:content";
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-const allSections = await getCollection("sections");
-// just a comment
 ---
 
 <!DOCTYPE html>
@@ -31,10 +28,8 @@ const allSections = await getCollection("sections");
   <body>
     <Header />
     <div class="main-container">
-      <Sidebar {title} sections={allSections} />
-      <main>
-        <slot />
-      </main>
+      <slot name="sidebar" />
+      <slot />
     </div>
   </body>
 </html>
