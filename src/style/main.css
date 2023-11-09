@@ -137,18 +137,45 @@ body {
   background-color: var(--color-background);
   line-height: 1.7;
   display: grid;
-  /* gap: 3rem; */
+  gap: 3rem;
   grid-template-rows: auto 1fr auto;
+  /* grid-template-columns: 20rem 1fr; */
+  grid-template-areas: 
+    "header header"
+    "main main"
+    "footer footer";
+}
+
+.main-container {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  gap: 6rem;
+  width: 85rem;
+  margin-inline: auto;
+  overflow-y: auto;
 }
 
 main {
   overflow-y: auto;
   width: 100%;
   scroll-behavior: smooth;
-  display: grid;
-  grid-template-columns: 20rem 1fr;
-  margin-inline: 3rem;
-  gap: 6rem;
+  /* display: grid; */
+  /* grid-template-columns: 20rem 1fr; */
+  /* margin-inline: 3rem; */
+  /* grid-area: main; */
+}
+
+.sidebar {
+  /* grid-area: sidebar; */
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
 }
 
 ::selection {
