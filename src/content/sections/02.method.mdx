@@ -1,6 +1,14 @@
 ---
 title: Method
 slug: method
+
+subsections: [
+  {title: 'Design', slug: 'design'},
+  {title: 'Pages scanned', slug: 'pages-scanned'},
+  {title: 'Participants', slug: 'participants'},
+  {title: 'Quantitative measures', slug: 'quantitative-measures-automated-accessibility-testing'},
+  {title: 'Qualitative measures', slug: 'qualitative-measures-usability-testing'},
+]
 ---
 ## {frontmatter.title}
 
@@ -15,7 +23,7 @@ Usability testing was performed with a purposive sample of three ASU students wi
 
 (TABLE 1 HERE)
 
-### Quantitative measures: Automated accessibility testing
+### Quantitative measures: automated accessibility testing
 Automated testing was performed by using a custom-coded web crawler that navigated to selected web pages with a "headless browser" provided by the Playwright end-to-end testing suite (Fast and Reliable End-to-End Testing for Modern Web Apps | Playwright, n.d.), and used Axe Core to run automated accessibility tests. Axe Core is an open-source automated web accessibility testing library (Axe-Core, 2023). It contains accessibility rule implementations that can programmatically check any web page or application against the latest web accessibility guidelines (WCAG). A headless browser is a web browser without a graphical user interface that can be controlled programmatically. These browsers enable automated testing by simulating user interactions and rendering content without the visible interface of a normal browser. They provide support for web standards and run browser engines internally so they can access web content like a typical browser.
 
 #### Scoring metrics
@@ -27,7 +35,7 @@ Scores were then calculated for each page by summing the total values of all iss
 
 (TABLE 3)
 
-### Qualitative measures: Usability testing
+### Qualitative measures: usability testing
 Subjects were asked to complete four tasks of varying levels of difficulty within the span of a one-hour usability testing session. Each task was designed to represent a typical situation in which a student needed access to important information or services offered by the website. To prevent unwanted changes to a subject’s account or registration status, subjects were asked not to submit or submit any forms they successfully filled out. The tasks, in the order they were presented to subjects were:
 
     1. You are a new student at Angelo State. Find and complete the "MyAccount" form to start at ASU. Do not submit the form when you're done.
