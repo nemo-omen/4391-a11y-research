@@ -1,21 +1,25 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import ReportLayout from "../layouts/ReportLayout.astro";
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import ReportLayout from '../layouts/ReportLayout.astro';
 // import Sidebar from "../components/Sidebar.astro";
-import Section from "../components/Section.astro";
-const title = "A11y Edu";
-const allSections = await getCollection("sections");
+import Section from '../components/Section.astro';
+const title = 'Accessibility and Usability at Angelo.edu and Their Effects on Students with Disabilities';
+const allSections = await getCollection('sections');
 // console.log(allSections);
 ---
 
-<ReportLayout {title}>
+<ReportLayout>
   <article class="flow" id="main-content">
-    {
-      allSections.map((section) => (
-        <Section id={section.id} slug={section.slug} />
-      ))
-    }
+    <header class="report-header">
+      <h1 class="report-title">{title}</h1>
+      <address class="author">
+        <p>Jeff Caldwell</p>
+        <p>Department of English and Modern Languages</p>
+        <p>Angelo State University</p>
+      </address>
+    </header>
+    {allSections.map((section) => <Section id={section.id} slug={section.slug} />)}
   </article>
 </ReportLayout>
 

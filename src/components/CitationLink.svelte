@@ -42,7 +42,7 @@
 </script>
 
 <!-- <span class="hoverer"> -->
-[<a
+(<a
   class="hoverer"
   {href}
   on:mouseenter={!cardVisible ? showCard() : null}
@@ -50,7 +50,7 @@
   on:focus={!cardVisible ? showCard() : null}
   on:blur={cardVisible ? hideCard() : null}
   use:floatingRef>{title}</a
->]
+>)
 {#if cardVisible}
   <div
     class="hover-card"

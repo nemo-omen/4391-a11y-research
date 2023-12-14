@@ -4,7 +4,14 @@ const { id } = Astro.props;
 
 <section class="citation">
   <h3 class="citation-title" id={id ? id : ''}><slot name="title" /></h3>
-  <p class="citation-content"><slot name="content" /></p>
+  <p class="citation-content">
+    <slot name="content" />
+  </p>
 </section>
 
-<style></style>
+<style>
+  .citation-content > * {
+    display: block;
+    margin-left: 2rem;
+  }
+</style>
