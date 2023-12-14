@@ -1,0 +1,29 @@
+---
+title: Recommendations
+slug: recommendations
+---
+
+## {frontmatter.title}
+
+To rectify the obstacles faced by students with disabilities, this study suggests a number of remedies that range from relatively simple adjustments to the underlying UI code to more challenging but necessary usability testing. It’s understood that staff at ASU may not have access to the source code of vendor-provided portals. However, these guidelines may help administrators choose the product that offers the greatest level of inclusivity for all students.
+
+### Technical fixes
+A large number of the accessibility violations reported in this study could be rectified by changes in the HTML structure that would take relatively little time. With the assistance of free accessibility tools and browser extensions, staff developers should be able to adjust pages like RamPort so they more closely comply with WCAG 2.0 guidelines. The following suggestions are only partial, as a comprehensive listing of every issue and how to correct it is outside the scope of this document. What follows is a set of what the researcher believes are the smallest changes that will have the largest accessibility impact with the smallest investment in time or effort on the part of university staff.
+    1. RamPort
+    • The majority of reported accessibility violations stemmed from the structure of the sidebar navigation menu. Using a `<nav>` tag with proper aria role would correct five of the critical violations reported on all RamPort pages.
+    • The page's primary content should be placed within a `<main>` element, and that element should reside at the top level of the document.
+    • All color combinations in the document should be tested using an automated testing tool and adjusted for acceptable color contrast
+    2. Banner Self Service
+    • Headings should follow proper heading order, and there should be at least one `<h1>` per page.
+    • The page's primary content should be placed within a `<main>` element, and that element should reside at the top level of the document.
+    3. Other
+    • Alt text for images should be descriptive and should not be repeated by image captions.
+    • Navigation menus, such as the “breadcrumb” navigation menu at the top of many public-facing pages on the ASU site (See Figure 5), should be contained within a “landmark” element such as `<main>` or `<header>` (HTML5 Landmark Elements Are Used to Improve Navigation | Lighthouse, n.d.).
+
+(FIGURE 5 -- SCREENSHOT OF BREADCRUMB MENU)
+
+### Usability testing
+
+Once adjustments are made to bring the site closer to accessibility standards, an effort should be made to assess the usability of the student-facing pages on the site with special care devoted to those pages that represent critical functionality for users.
+
+One major pain point observed in testing was the class registration lookup page. Its multi-column, densely packed table layout caused considerable confusion and slow parsing, even among experienced users. To alleviate this issue, an alternative organization focused first on class schedule availability followed by a clean, clearly tagged section for each class's details merits exploration. For example, leveraging a more judicious heading hierarchy and simplifying the volume of data presented simultaneously could aid comprehension. However, further testing is required to determine the optimal structure and presentation before overhauling any page.

@@ -1,0 +1,37 @@
+---
+title: Method
+slug: method
+---
+## {frontmatter.title}
+
+### Design
+The study was conducted in two stages, designed to collect quantitative data about the number of WCAG 2.0 violations on the student-facing pages of the university website and the effect of WCAG 2.0 conformance on blind or partially sighted subjects. The first stage gathered quantitative data by analyzing selected pages using the Axe Core automated accessibility testing tool (Axe-Core, 2023). Axe Core's reports reported the number of WCAG 2.0 violations per page and the level of anticipated impact per error. The second stage gathered qualitative data through task-based user evaluation with vision-disabled student subjects on selected pages. Subjects were asked to perform four tasks designed to represent student interactions with the core services provided by the page.
+
+### Pages scanned
+A total of 29 web pages were scanned using the Axe Core testing software. Those pages were segmented for analysis according to their location and their provided functionality. Web pages fell into two primary categories: 1) Seven pages that consisted of outward-facing content geared toward prospective students, parents, visitors, and other external site traffic. These pages were publicly available without the need for authentication. 2) 22 pages that enabled students to perform critical administrative functions in areas such as registration, financials, academics, and access to campus life. These pages required university authentication for access. Pages that provided core student services were further segmented by functionality and overall page structure and were categorized as A) RamPort — the portal through which students access information about academics, registration, financial aid, and campus life, B) Banner Self Service — the portal used by students to interact with university systems such as admission, class registration, and bill payment.
+
+### Participants
+Usability testing was performed with a purposive sample of three ASU students with vision disabilities. Subjects were recruited with the assistance of the Director of Student Disability Services. While the small number of participants does not shed light on the percentage of the student population who might share the same experiences with the website, their feedback provides valuable qualitative insights into the barriers faced by similar students. The three subjects are referred to as Subject 1, Subject 2, and Subject 3 throughout the report to maintain anonymity while allowing clear distinction of feedback by each individual. Participants each had some degree of vision disability and provided feedback according to their experience. A description of each subject is provided in Table 1.
+
+(TABLE 1 HERE)
+
+### Quantitative measures: Automated accessibility testing
+Automated testing was performed by using a custom-coded web crawler that navigated to selected web pages with a "headless browser" provided by the Playwright end-to-end testing suite (Fast and Reliable End-to-End Testing for Modern Web Apps | Playwright, n.d.), and used Axe Core to run automated accessibility tests. Axe Core is an open-source automated web accessibility testing library (Axe-Core, 2023). It contains accessibility rule implementations that can programmatically check any web page or application against the latest web accessibility guidelines (WCAG). A headless browser is a web browser without a graphical user interface that can be controlled programmatically. These browsers enable automated testing by simulating user interactions and rendering content without the visible interface of a normal browser. They provide support for web standards and run browser engines internally so they can access web content like a typical browser.
+
+#### Scoring metrics
+Tests performed by Axe Core produce reports that detail the number of WCAG 2.0 violations on a page and assign one of four impact levels to accessibility issues - minor, moderate, serious, and critical. Minor issues cause frustration but do not prohibit access. Moderate issues impede some users from completing certain workflows. Serious issues partially or fully block access to crucial content and functions for assisted technology users. Critical issues entirely prevent users from utilizing essential site capabilities. For this study, issues were assigned a point value according to their impact level. Table 2 shows the scores assigned to each accessibility violation.
+
+(TABLE 2)
+
+Scores were then calculated for each page by summing the total values of all issues on the page. Cumulative scores were then divided into five categories, listed in Table 3. Overall page category scores were applied as an average of all individual page scores.
+
+(TABLE 3)
+
+### Qualitative measures: Usability testing
+Subjects were asked to complete four tasks of varying levels of difficulty within the span of a one-hour usability testing session. Each task was designed to represent a typical situation in which a student needed access to important information or services offered by the website. To prevent unwanted changes to a subject’s account or registration status, subjects were asked not to submit or submit any forms they successfully filled out. The tasks, in the order they were presented to subjects were:
+
+    1. You are a new student at Angelo State. Find and complete the "MyAccount" form to start at ASU. Do not submit the form when you're done.
+    2. You have forgotten your password. Find and fill out the MyPassword password reset form. Do not submit the form when you're done.
+    3. You have signed up for a minor in Journalism. Find a course in the spring of 2024 that fulfills a requirement for the minor and register for the course.
+    4. You are considering applying to a graduate program at Angelo State. Find a program that interests you, then navigate to your unofficial transcripts to verify whether you meet the requirements.
+
