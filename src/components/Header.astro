@@ -5,16 +5,13 @@ const pathname = currentUrl.pathname;
 
 <header>
   <a href="#main-content" class="skip-link visually-hidden">Skip to Content</a>
-  <a class="masthead" aria-label="Ally Crawler" href="/">A11y Edu</a>
+  <a class="masthead" aria-label="Ally Crawler" href="/">Accessibility at Angelo.edu</a>
 
   <nav class="site-nav" aria-label="Main Navigation">
     <ul>
-      <li><a href="/" class={pathname === "/" ? "current" : ""}>Report</a></li>
+      <li><a href="/" class={pathname === '/' ? 'current' : ''}>Report</a></li>
       <li>
-        <a
-          href="/poster"
-          class={pathname.startsWith("/poster") ? "current" : ""}>Poster</a
-        >
+        <a href="/poster" class={pathname.startsWith('/poster') ? 'current' : ''}>Poster</a>
       </li>
     </ul>
   </nav>
