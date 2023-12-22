@@ -4,6 +4,7 @@
   --color-red: 255, 99, 71;
   --color-blue: 32, 159, 179;
   --color-light-blue: 59, 229, 255;
+  --blah: #209fb3;
   --color-black: 14, 12, 20;
   --color-white: 250, 248, 254;
   --color-body: rgb(var(--color-black));
@@ -371,6 +372,11 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  & table {
+    width: 100%;
+    border-spacing: 0.5em;
+  }
 }
 
 figcaption {
@@ -387,6 +393,12 @@ th {
   ;
 }
 
+
+.apexcharts-text,
+.apexcharts-legend-text {
+  color: var(--color-body) !important;
+  fill: var(--color-body) !important;
+}
 
 /* section {
   padding: 1rem;

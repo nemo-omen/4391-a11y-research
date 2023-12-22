@@ -6,6 +6,10 @@ subsections: [
   {title: 'Usability testing results', slug: 'usability-testing-results'},
 ]
 ---
+
+import { usabilityTotalsOptions, violationTotalsOptions } from '../../data/totals.js'
+import BarChart from '../../components/BarChart.svelte'
+
 ## {frontmatter.title}
 
 ### Automated testing results
@@ -30,7 +34,8 @@ Over the 29 pages that were scanned, 16 pages fell under the “Banner Self Serv
 
 While the highest number of violations belonged to the Banner Self Service category, that group also represented the largest set of pages that were scanned — well over twice as many as either of the other two groups. The mean number of errors per page within Banner Self Service was 3.31. RamPort, with only six pages scanned, had only two fewer errors than Banner Self Service, giving the category a mean of 8.5 violations per page. Other pages had the fewest violations, with 12 total errors and a mean violation per page of 1.71 (Figure 1).
 
-(FIGURE 1 -- GROUPED BAR CHART)
+
+<BarChart client:visible options={violationTotalsOptions} divId={"fig1_chart"}/>
 
 Automated testing shows that RamPort carries the highest number of WCAG violations per page. The category also has the highest number of critical violations — ten in total — and represents the only category with at least one violation of every impact type. If accessibility compliance were the only factor that decided a student’s ability to navigate a page and benefit from its services, RamPort would represent the most imposing digital obstacle facing disabled students.
 
@@ -38,7 +43,11 @@ Because RamPort had the highest average number of violations per page, this stud
 
 Five reported violations, the majority of those reported on each RamPort page, originate from the sidebar menu (Figure 2). A violation is generated for each of the five links within the menu because, while each element includes an appropriate ARIA role "(WAI-ARIA Roles - Accessibility | MDN, 2023) — "menu-item" — those elements are not contained by a parent element with an appropriate "menu," "menubar," or "group" role. While reporting five violations for something that can be corrected by editing a single element may seem misleading, the consequences for keyboard-dependent users merit the associated level of urgency.
 
-(FIGURE 2 -- RAMPORT SIDEBAR SCREENSHOT)
+<figure>
+<img src="/Figure2.png" alt="A screenshot of the RamPort sidebar menu. A vertical menu with a list of links: 'Home,' 'Academics,' 'Financial Aid and Billing,' 'Campus Life,' and 'Registration.'" />
+
+<figcaption>Figure 2: RamPort's sidebar navigation menu</figcaption>
+</figure>
 
 The "menu" and similar roles signal to screen readers that the user who navigates to the list of links or actions is now interacting with a menu and, with proper labeling, allows them to either skip past the enclosed items or through them one by one (Menu and Menubar Pattern — Initiative (WAI), n.d.). When the appropriate ARIA role is missing, it forces users to navigate through every menu link without indicating that they are in a menu. In the case of RamPort, users perform this list cycling before they reach the primary content on the page. To make matters more complex, any time a user navigates to another page in the RamPort category, they must repeat the cycle. This repetitive, time-consuming, and sometimes strenuous interaction erodes a user's precious time and may lead to discomfort, pain, or a feeling of exclusion (Stories of Web Users — Initiative (WAI), 2023).
 
@@ -46,4 +55,4 @@ The "menu" and similar roles signal to screen readers that the user who navigate
 
 Within a one-hour usability testing session, subjects were asked to complete four tasks that involved interacting with at least one of the three primary page categories. Task 1, which required subjects to interact with pages in the Other category, took an average of eight minutes to complete per user. Task 2, which also required students to interact with the Other category, took an average of six minutes per user. Task 3, which required users to interact with the RamPort and Banner Self Service categories, took an average of 35 minutes per user. None of the users could complete Task 4 within the testing period (Figure 3). While Task 3 is included in the average time per task results, only one student, Subject 3, was able to complete the task without assistance successfully.
 
-(FIGURE 3 -- GROUPED BAR CHART)
+<BarChart client:visible options={usabilityTotalsOptions} divId={"fig3_chart"}/>
