@@ -127,4 +127,11 @@ export const usabilityTotalsOptions = {
       shadeIntensity: 0.75
     }
   },
+  tooltip: {
+    y: {
+      formatter: function (val, {series, seriesIndex, dataPointIndex, w}) {
+        return `${val} Min`;
+      }
+    }
+  }
 }

@@ -400,6 +400,12 @@ th {
   fill: var(--color-body) !important;
 }
 
+.apexcharts-tooltip,
+.apexcharts-tooltip-title {
+  background: var(--color-background) !important;
+  color: var(--color-body) !important;
+}
+
 /* section {
   padding: 1rem;
 } */
