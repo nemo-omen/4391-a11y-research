@@ -19,13 +19,13 @@ The study was conducted in two stages, designed to collect quantitative data abo
 A total of 29 web pages were scanned using the Axe Core testing software. Those pages were segmented for analysis according to their location and their provided functionality. Web pages fell into two primary categories: 1) Seven pages that consisted of outward-facing content geared toward prospective students, parents, visitors, and other external site traffic. These pages were publicly available without the need for authentication. 2) 22 pages that enabled students to perform critical administrative functions in areas such as registration, financials, academics, and access to campus life. These pages required university authentication for access. Pages that provided core student services were further segmented by functionality and overall page structure and were categorized as A) RamPort — the portal through which students access information about academics, registration, financial aid, and campus life, B) Banner Self Service — the portal used by students to interact with university systems such as admission, class registration, and bill payment.
 
 ### Participants
-Usability testing was performed with a purposive sample of three ASU students with vision disabilities. Subjects were recruited with the assistance of the Director of Student Disability Services. While the small number of participants does not shed light on the percentage of the student population who might share the same experiences with the website, their feedback provides valuable qualitative insights into the barriers faced by similar students. The three subjects are referred to as Subject 1, Subject 2, and Subject 3 throughout the report to maintain anonymity while allowing clear distinction of feedback by each individual. Participants each had some degree of vision disability and provided feedback according to their experience. A description of each subject is provided in Table 1.
+Usability testing was performed with a purposive sample of three ASU students with vision disabilities. Subjects were recruited with the assistance of the Director of Student Disability Services. While the small number of participants does not shed light on the percentage of the student population who might share the same experiences with the website, their feedback provides valuable qualitative insights into the barriers faced by similar students. The three subjects are referred to as Subject 1, Subject 2, and Subject 3 throughout the report to maintain anonymity while allowing clear distinction of feedback by each individual. Participants each had some degree of vision disability and provided feedback according to their experience. A description of each subject is provided in [Table 1](#table1).
 
-<figure>
+<figure id="table1">
 
 | Pseudonym | Description |
 | --------- | ----------- |
-| Subject 1 | A first-year remote who lost their sight in 2006. Participated remotely via video conferencing software with screen-sharing. |
+| Subject 1 | A first-year remote student who lost their sight in 2006. Participated remotely via video conferencing software with screen-sharing. |
 | Subject 2 | A legally-blind student who attended class on-campus. Was unable to use a screen-reader, however disability required significant text magnification. |
 | Subject 3 | A student who lost vision in one eye. Simulated blindness for this study through the use of an eye-covering. |
 
@@ -36,9 +36,9 @@ Usability testing was performed with a purposive sample of three ASU students wi
 Automated testing was performed by using a custom-coded web crawler that navigated to selected web pages with a "headless browser" provided by the Playwright end-to-end testing suite ([Fast and Reliable End-to-End Testing for Modern Web Apps | Playwright, n.d.](#citation-playwright)), and used Axe Core to run automated accessibility tests. Axe Core is an open-source automated web accessibility testing library ([Axe-Core, 2023](#citation-axe-core)). It contains accessibility rule implementations that can programmatically check any web page or application against the latest web accessibility guidelines (WCAG). A headless browser is a web browser without a graphical user interface that can be controlled programmatically. These browsers enable automated testing by simulating user interactions and rendering content without the visible interface of a normal browser. They provide support for web standards and run browser engines internally so they can access web content like a typical browser.
 
 #### Scoring metrics
-Tests performed by Axe Core produce reports that detail the number of WCAG 2.0 violations on a page and assign one of four impact levels to accessibility issues - minor, moderate, serious, and critical. Minor issues cause frustration but do not prohibit access. Moderate issues impede some users from completing certain workflows. Serious issues partially or fully block access to crucial content and functions for assisted technology users. Critical issues entirely prevent users from utilizing essential site capabilities. For this study, issues were assigned a point value according to their impact level. Table 2 shows the scores assigned to each accessibility violation.
+Tests performed by Axe Core produce reports that detail the number of WCAG 2.0 violations on a page and assign one of four impact levels to accessibility issues - minor, moderate, serious, and critical. Minor issues cause frustration but do not prohibit access. Moderate issues impede some users from completing certain workflows. Serious issues partially or fully block access to crucial content and functions for assisted technology users. Critical issues entirely prevent users from utilizing essential site capabilities. For this study, issues were assigned a point value according to their impact level. [Table 2](#table2) shows the scores assigned to each accessibility violation.
 
-<figure>
+<figure id="table2">
 
 | Impact | Point Value |
 | ------ | ----------- |
@@ -51,9 +51,9 @@ Tests performed by Axe Core produce reports that detail the number of WCAG 2.0 v
 
 </figure>
 
-Scores were then calculated for each page by summing the total values of all issues on the page. Cumulative scores were then divided into five categories, listed in Table 3. Overall page category scores were applied as an average of all individual page scores.
+Scores were then calculated for each page by summing the total values of all issues on the page. Cumulative scores were then divided into five categories, listed in [Table 3](#table3). Overall page category scores were applied as an average of all individual page scores.
 
-<figure>
+<figure id="table3">
 
 | Point Value | Accessibility Level |
 | ----------- | ------------------- |
